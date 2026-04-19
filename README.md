@@ -43,39 +43,41 @@ Delete (middle/front)	O(n)
 Search (unsorted)	O(n)
 *Amortized
 
-Basic Operations (Python)
-Create
-nums = [1, 2, 3, 4]
-Access
-print(nums[0])  # 1
-Update
-nums[1] = 10
-Append / Insert
-nums.append(5)        # end
-nums.insert(1, 99)    # index insert
-Delete
-nums.pop()        # last
-nums.pop(1)       # index
-del nums[0]       # delete index
+              Two Pointers
+two indices to traverse a data structure, often an array or a linked list
+these pointers can move in the same direction, opposite directions, or even in a sliding window fashion
+reduces time complexity by avoiding nested loops
 
-4. Traversal Techniques
-A. Standard Loop
-for i in range(len(nums)):
-    print(nums[i])
-B. Direct Iteration
-for x in nums:
-    print(x)
-C. With Index + Value
-for i, x in enumerate(nums):
-    print(i, x)
-5. Common Array Transformations
-Reverse
-nums.reverse()
-# or
-nums = nums[::-1]
-Sort
-nums.sort()          # ascending
-nums.sort(reverse=True)
-Copy
-copy = nums[:]       # shallow copy
+Variations:
+- forward direction: both start at beginning and move towards the end
+- opposite direction: one pointer starts at beginning and the other at end
+- sliding window: one pointer moves faster than the other, creating a window of elements to process
+
+Example 1: Two Sum (Sorted Array)
+
+Given a sorted array of integers, find two numbers that add up to a specific target. Using two pointers, one at the start and one at the end, we can efficiently find the pair in O(n) time.
+
+def two_sum(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        current_sum = nums[left] + nums[right]
+        if current_sum == target:
+            return [nums[left], nums[right]]
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    return []
+Example 2: Remove Duplicates from Sorted Array
+
+Using two pointers, one to track the position of the next unique element, we can remove duplicates in-place.
+
+def remove_duplicates(nums):
+    if not nums: return 0
+    i = 0
+    for j in range(1, len(nums)):
+        if nums[j] != nums[i]:
+            i += 1
+            nums[i] = nums[j]
+    return i + 1
 
