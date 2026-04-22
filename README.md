@@ -81,3 +81,50 @@ def remove_duplicates(nums):
             nums[i] = nums[j]
     return i + 1
 
+        Sliding Window
+problem solving technique that transforms two nested loops into one loop. It can reduce the time complexity of an algorithm to O(n).
+Count Occurrences of Anagram
+Solution 1
+
+from collections import Counter
+
+def isAnagram(s, word):
+    return Counter(s) == Counter(word)
+
+def countAnagram(text, word):
+    w = len(word)
+    count = 0
+    d = {}
+
+    if len(text) < w:
+        return 0
+
+    for i in range(len(text) - w + 1):
+        ana = text[i:i + w]
+        if ana not in d and isAnagram(ana, word):
+            count += 1
+            d[ana] = True
+
+    return count
+
+Solution 2:
+def getCountOccurances(text, word):
+    wHeap = [0] * 26
+    textHeap = [0] * 26
+    start = 0
+    count = 0
+    
+    for c in word:
+        wHeap[ord(c) - ord('a')] += 1
+    
+    for i in range(len(text)):
+        textHeap[ord(text[i]) - ord('a')] += 1
+        if (i - start + 1) == len(word):
+            if textHeap == wHeap:
+                count += 1
+            
+            textHeap[ord(text[start]) - ord('a')] -= 1
+            start += 1
+        
+    return count
+
