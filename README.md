@@ -35,12 +35,12 @@ Can be static or dynamic (Python list, Java ArrayList)
 
 Time & Space Complexity
 Operation	Time Complexity
-Access (nums[i])	O(1)
-Update	O(1)
-Append (end)	O(1)*
-Insert (middle/front)	O(n)
-Delete (middle/front)	O(n)
-Search (unsorted)	O(n)
+- Access (nums[i])	O(1)
+- Update	O(1)
+- Append (end)	O(1)*
+- Insert (middle/front)	O(n)
+- Delete (middle/front)	O(n)
+- Search (unsorted)	O(n)
 *Amortized
 
               Two Pointers
@@ -125,6 +125,5 @@ def getCountOccurances(text, word):
             
             textHeap[ord(text[start]) - ord('a')] -= 1
             start += 1
-        
     return count
 
