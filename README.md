@@ -127,3 +127,33 @@ def getCountOccurances(text, word):
             start += 1
     return count
 
+
+      Stack
+works like last-in-first-out
+the most recent item goes out first
+Core Stack Operations
+- Push: add an element to the top of teh stack
+- pop: remove the element from the top of the stack
+- peek: look at the top element without removing it
+- isEmpty: check if the stack has any elements
+Implementation:
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("pop from empty stack")
+        return self.stack.pop()
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.stack[-1]
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
