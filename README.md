@@ -160,3 +160,51 @@ class Stack:
     def is_empty(self):
         return len(self.stack) == 0
 
+
+
+
+    Binary Search
+searching algorithm for finding an element's position in a sorted array.
+
+Binary Search Algorithm
+Iteration Method
+do until the pointers low and high meet each other.
+    mid = (low + high)/2
+    if (x == arr[mid])
+        return mid
+    else if (x > arr[mid]) // x is on the right side
+        low = mid + 1
+    else                       // x is on the left side
+        high = mid - 1
+        
+Recursive Method
+binarySearch(arr, x, low, high)
+    if low > high
+        return False 
+    else
+        mid = (low + high) / 2 
+        if x == arr[mid]
+            return mid
+        else if x > arr[mid]        // x is on the right side
+            return binarySearch(arr, x, mid + 1, high)
+        else                               // x is on the left side
+            return binarySearch(arr, x, low, mid - 1)
+
+# Binary Search in python
+def binarySearch(array, x, low, high):
+
+    # Repeat until the pointers low and high meet each other
+    while low <= high:
+
+        mid = low + (high - low)//2
+
+        if x == array[mid]:
+            return mid
+
+        elif x > array[mid]:
+            low = mid + 1
+
+        else:
+            high = mid - 1
+
+    return -1
