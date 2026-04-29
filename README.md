@@ -24,8 +24,7 @@ Algorithms
 - union find
 - greedy
 
-
-               ** Arrays**
+# Arrays
 An array is a contiguous block of memory storing elements of the same type.
 Key Features
 Indexed (0-based)
@@ -43,7 +42,7 @@ Operation	Time Complexity
 - Search (unsorted)	O(n)
 *Amortized
 
-             ** Two Pointers**
+# Two Pointers
 two indices to traverse a data structure, often an array or a linked list
 these pointers can move in the same direction, opposite directions, or even in a sliding window fashion
 reduces time complexity by avoiding nested loops
@@ -52,8 +51,8 @@ Variations:
 - forward direction: both start at beginning and move towards the end
 - opposite direction: one pointer starts at beginning and the other at end
 - sliding window: one pointer moves faster than the other, creating a window of elements to process
-
-Example 1: Two Sum (Sorted Array)
+**
+Example 1: Two Sum (Sorted Array)**
 
 Given a sorted array of integers, find two numbers that add up to a specific target. Using two pointers, one at the start and one at the end, we can efficiently find the pair in O(n) time.
 
@@ -68,6 +67,8 @@ def two_sum(nums, target):
         else:
             right -= 1
     return []
+
+    
 Example 2: Remove Duplicates from Sorted Array
 
 Using two pointers, one to track the position of the next unique element, we can remove duplicates in-place.
@@ -81,7 +82,7 @@ def remove_duplicates(nums):
             nums[i] = nums[j]
     return i + 1
 
-       ** Sliding Window**
+# Sliding Window
 problem solving technique that transforms two nested loops into one loop. It can reduce the time complexity of an algorithm to O(n).
 Count Occurrences of Anagram
 Solution 1
@@ -130,8 +131,8 @@ def getCountOccurances(text, word):
 
       
       
-      
-      **Stack**
+# Stacks
+
 works like last-in-first-out
 the most recent item goes out first
 Core Stack Operations
@@ -163,7 +164,8 @@ class Stack:
 
 
 
-   ** Binary Search**
+
+# Binary Search
 searching algorithm for finding an element's position in a sorted array.
 
 Binary Search Algorithm
@@ -208,3 +210,49 @@ def binarySearch(array, x, low, high):
             high = mid - 1
 
     return -1
+
+
+# Linked List
+
+data which denotes the value of the node.
+next which is a reference to the succeeding node.
+
+APPEND A NODE TO NON-EMPTY LINKED LIST
+while (current.next != null) {
+    current = current.next;
+}
+current.next = newNode;
+
+How to Insert a node at the First Index
+if (index == 0) {
+    newNode.next = head;
+    head = newNode;
+}
+
+
+How to Insert a Node at Any Position
+for (int i = 0; i < index - 1 && current != null; i++) {
+    current = current.next;
+}
+if (current != null) {
+    newNode.next = current.next;
+    current.next = newNode;
+}
+
+How to Delete a Node in a Linked List
+if (index == 0) {
+    deletedValue = head.data;
+    head = head.next;
+}
+
+
+How to Delete a Node at a Given Position
+for (int i = 0; i < index && current != null; i++) {
+    previous = current;
+    current = current.next;
+}
+
+if (current != null) {
+    deletedValue = current.data;
+    previous.next = current.next;
+}
