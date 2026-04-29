@@ -25,7 +25,7 @@ Algorithms
 - greedy
 
 
-                Arrays
+               ** Arrays**
 An array is a contiguous block of memory storing elements of the same type.
 Key Features
 Indexed (0-based)
@@ -43,7 +43,7 @@ Operation	Time Complexity
 - Search (unsorted)	O(n)
 *Amortized
 
-              Two Pointers
+             ** Two Pointers**
 two indices to traverse a data structure, often an array or a linked list
 these pointers can move in the same direction, opposite directions, or even in a sliding window fashion
 reduces time complexity by avoiding nested loops
@@ -81,7 +81,7 @@ def remove_duplicates(nums):
             nums[i] = nums[j]
     return i + 1
 
-        Sliding Window
+       ** Sliding Window**
 problem solving technique that transforms two nested loops into one loop. It can reduce the time complexity of an algorithm to O(n).
 Count Occurrences of Anagram
 Solution 1
@@ -131,7 +131,7 @@ def getCountOccurances(text, word):
       
       
       
-      Stack
+      **Stack**
 works like last-in-first-out
 the most recent item goes out first
 Core Stack Operations
@@ -163,7 +163,7 @@ class Stack:
 
 
 
-    Binary Search
+   ** Binary Search**
 searching algorithm for finding an element's position in a sorted array.
 
 Binary Search Algorithm
@@ -190,7 +190,7 @@ binarySearch(arr, x, low, high)
         else                               // x is on the left side
             return binarySearch(arr, x, low, mid - 1)
 
-# Binary Search in python
+Binary Search in Python
 def binarySearch(array, x, low, high):
 
     # Repeat until the pointers low and high meet each other
